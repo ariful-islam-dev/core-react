@@ -1,9 +1,16 @@
 .Container {
-  width: 100%;
-  min-height: 100px;
-  padding: 20px;
-  margin-top: 50px;
-  border: 1px solid #ddd;
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    margin-top: 50px;
+    display: flex;
+    /* border: 1px solid #ddd; */
+    justify-content: space-around;
+}
+.Heading{
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 50px;
 }
 .Bio {
   margin-bottom: 30px;
@@ -59,4 +66,14 @@
 }
 .Links ul li a:hover{
     color: #ffa500;
+}
+button.Btn {
+    width: 200px;
+    height: 80px;
+    border: 1px solid green;
+}
+
+
+span.text {
+    font-size: 80px;
 }
