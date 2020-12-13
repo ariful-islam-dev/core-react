@@ -6,7 +6,8 @@
 .Heading {
     font-size: 48px;
     font-weight: 300;
-    color: #222
+    color: #222;
+    text-align: center;
 }
 .Btn{
     width: 200px;
