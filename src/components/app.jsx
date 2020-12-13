@@ -1,42 +1,59 @@
-import React, { Component, Profiler } from 'react';
-import Button from './button';
-import './app.css';
-import BoxB from './box_b';
-import BoxA from './box_a';
+import React, { Component } from 'react';
+import classes from './app.module.css';
 
-import './app.css';
-import './button.module.css'
 
-const myHeader = {
-    color: 'blue',
-    fontWeight: 300,
-    fontFamily: 'Arial',
-    fontSize: '36px'
-}
 class App extends Component {
 
+    state = {
+        name: '',
+    }
 
-
+    handleButtonClick = (event) => {
+        console.log(event.target);
+        // console.log('I am cute littel button');
+    }
+    handleChange = (event) => {
+        this.setState({ name: event.target.value })
+        // console.log(event.target.value);
+    }
+    handleFocus = (event)=>{
+        console.log('I am Focus');
+    }
+    handleBlur=(event)=>{
+        if(!this.state.name){
+            alert('Please Enter Your Name')
+        }
+        console.log('I am blur event');
+    }
     render() {
 
         return (
-            <div className="App">
-                <h1 style={myHeader}>How to Style Rect App</h1>
-                <h1 style={{
-                    color: 'blue',
-                    fontWeight: 300,
-                    fontFamily: 'Arial',
-                    fontSize: '36px'
-                }}>Another Header Tag</h1>
-                <Button >Click Me</Button>
-                <BoxA></BoxA>
-                <BoxB></BoxB>
-                <button className="button">Another</button>
+            <div className={classes.Wrapper}>
+                <h1 className={classes.Heading}>Events in React</h1>
+                <button
+                    className={classes.Btn}
+                    onClick={this.handleButtonClick}
+                >Click Me!</button>
+                <br />
+                <input
+                    onChange={this.handleChange}
+                    className={classes.TextFild}
+                    value={this.state.name}
+                    type="text"
+                    placeholder="Enter some text"
+                    onFocus={this.handleFocus}
+                    onBlur={this.handleBlur}
+                />
+                <br />
+                <br />
+                {
+                    this.state.name && <h3>Welcome, {this.state.name}</h3>
+                }
             </div>
+
         );
     }
 }
 
 export default App;
 
-//6.1 Done
